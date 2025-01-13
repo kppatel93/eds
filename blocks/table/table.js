@@ -5,6 +5,15 @@ function buildCell(rowIndex) {
 }
 
 export default async function decorate(block) {
+  const searchContainer = document.createElement('div');
+  const searchInput = document.createElement('input');
+  const searchButton = document.createElement('button');
+  searchButton.textContent = 'Search';
+
+  searchContainer.append(searchInput, searchButton);
+  document.body.append(searchContainer);
+
+  // Create table elements
   const table = document.createElement('table');
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
@@ -23,6 +32,28 @@ export default async function decorate(block) {
       row.append(cell);
     });
   });
+
   block.innerHTML = '';
   block.append(table);
+
+  // Add search functionality
+  searchButton.addEventListener('click', () => {
+    const searchQuery = searchInput.value.toLowerCase();
+    const rows = tbody.querySelectorAll('tr');
+    rows.forEach((row) => {
+      let matchFound = false;
+      row.querySelectorAll('td').forEach((cell) => {
+        if (cell.innerText.toLowerCase().includes(searchQuery)) {
+          matchFound = true;
+        }
+      });
+
+      // Show or hide rows based on search match
+      if (matchFound) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
 }
