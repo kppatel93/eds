@@ -36,7 +36,7 @@ export default async function decorate(block) {
   block.innerHTML = '';
   block.append(table);
 
-  // Add search functionality
+  // Search Function
   searchButton.addEventListener('click', () => {
     const searchQuery = searchInput.value.toLowerCase();
     const rows = tbody.querySelectorAll('tr');

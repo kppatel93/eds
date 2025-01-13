@@ -21,6 +21,15 @@
       font-size: var(--body-font-size-m);
     }
   }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  thead {
+    background-color: rgb(183, 245, 245);
+    text-align: center;
+  }
   
   .table table thead tr {
     border-top: 2px solid #dadada;
@@ -65,3 +74,7 @@
   .table.bordered table td {
     border: 1px solid #dadada;
   }
+
+  tr:nth-child(even) {
+    background-color: #f2f2e8;
+}
