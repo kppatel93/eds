@@ -3,7 +3,7 @@
     overflow-x: auto;
   }
   
-  .table table {
+  table {
     width: 100%;
     max-width: 100%;
     border-collapse: collapse;
@@ -27,9 +27,13 @@
   }
 
   thead {
-    background-color: rgb(183, 245, 245);
+    background-color: #b7f5f5;
     text-align: center;
   }
+
+  tr:nth-child(even) {
+    background-color: #f2f2e8;
+}
   
   .table table thead tr {
     border-top: 2px solid #dadada;
@@ -75,6 +79,4 @@
     border: 1px solid #dadada;
   }
 
-  tr:nth-child(even) {
-    background-color: #f2f2e8;
-}
+ 
