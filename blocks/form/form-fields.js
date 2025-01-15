@@ -90,8 +90,6 @@ const createSelect = async (fd) => {
   if (fd.Options) {
     let options = [];
     if (fd.Options.startsWith('https://')) {
-      const optionsUrl = new URL(fd.Options);
-      const resp = await fetch(`${optionsUrl.pathname}${optionsUrl.search}`);
       const json = [
         {
           Option: 'Alabama',
